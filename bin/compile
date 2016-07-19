@@ -1,5 +1,7 @@
 #!/bin/sh
 
+BUILD_DIR=$1
+
 # Install JAVA
 
 # download the buildpack
