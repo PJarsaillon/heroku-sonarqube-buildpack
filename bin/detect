@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# This pack is valid for apps with a sonar-application-*.jar in lib folder
+if [ -f ./lib/sonar-application-*.jar ]; then
+  echo "SonarQubeFramework"
+  exit 0
+else
+  exit 1
+fi

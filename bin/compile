@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Do nothing and keep SonarQube files
+exit 0
