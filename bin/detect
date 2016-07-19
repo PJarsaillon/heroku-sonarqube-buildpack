@@ -1,7 +1,9 @@
 #!/bin/sh
 
+BUILD_DIR=$1
+
 # This pack is valid for apps with a sonar-application-*.jar in lib folder
-if [ -f ./lib/sonar-application-*.jar ]; then
+if [ -f ${BUILD_DIR}/lib/sonar-application-*.jar ]; then
   echo "SonarQubeFramework"
   exit 0
 else
