@@ -1,4 +1,7 @@
 #!/bin/sh
 
-# Nothing to do for now
-exit 0
+BUILD_DIR=$1
+
+echo "-----> Create setupSonar.sh"
+cp ../setupSonar.sh ${BUILD_DIR}/setupSonar.sh
+chmod +x ${BUILD_DIR}/setupSonar.sh
