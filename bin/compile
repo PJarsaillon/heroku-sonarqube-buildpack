@@ -1,7 +1,10 @@
 #!/bin/sh
 
+# Absolute path
+BIN_DIR=$(cd $(dirname $0) && pwd)
+
 BUILD_DIR=$1
 
 echo "-----> Create setupSonar.sh"
-cp ../setupSonar.sh ${BUILD_DIR}/setupSonar.sh
+cp ${BIN_DIR}/../setupSonar.sh ${BUILD_DIR}/setupSonar.sh
 chmod +x ${BUILD_DIR}/setupSonar.sh
