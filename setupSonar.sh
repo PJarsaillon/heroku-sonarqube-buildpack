@@ -11,7 +11,8 @@ echo "       sonar.jdbc.password is set to ${JDBC_DATABASE_PASSWORD}"
 sed -i -e "s/@DB_PASSWORD@/${JDBC_DATABASE_PASSWORD}/g" ./conf/sonar.properties
 
 echo "       sonar.jdbc.url is set to ${JDBC_DATABASE_URL}"
-sed -i -e "s#@BD_URL@#${JDBC_DATABASE_URL}#g" ./conf/sonar.properties
+databaseUrlEscaped=$(echo ${JDBC_DATABASE_URL} | sed -e 's/[\/&]/\\&/g')
+sed -i -e "s/@DB_URL@/${databaseUrlEscaped}/g" ./conf/sonar.properties
 
 echo "-----> Start sonar.sh start"
 ./bin/linux-x86-64/sonar.sh start
