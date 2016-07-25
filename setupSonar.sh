@@ -20,4 +20,4 @@ echo "-----> Start sonar.sh start"
 ./bin/linux-x86-64/sonar.sh start
 
 echo "-----> Log"
-tail -n 50 -f ./logs/sonar.log
+(tail -f ./logs/sonar.log &)
