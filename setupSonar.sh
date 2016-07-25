@@ -14,7 +14,10 @@ echo "       sonar.jdbc.url is set to ${JDBC_DATABASE_URL}"
 databaseUrlEscaped=$(echo ${JDBC_DATABASE_URL} | sed -e 's/[\/&]/\\&/g')
 sed -i -e "s/@DB_URL@/${databaseUrlEscaped}/g" ./conf/sonar.properties
 
-echo "" > ./logs/sonar.log
+echo "------------------------------------------------------" > ./logs/sonar.log
 
 echo "-----> Start sonar.sh restart"
 ./bin/linux-x86-64/sonar.sh restart
+
+echo "-----> Start loging"
+(tail -f ./logs/sonar.log &)
