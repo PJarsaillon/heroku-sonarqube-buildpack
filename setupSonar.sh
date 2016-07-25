@@ -20,4 +20,4 @@ echo "-----> Start sonar.sh restart"
 ./bin/linux-x86-64/sonar.sh restart
 
 echo "-----> Start loging"
-(tail -f ./logs/sonar.log &)
+tail -f ./logs/sonar.log
